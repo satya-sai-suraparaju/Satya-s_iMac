@@ -9,36 +9,38 @@
 </head>
 <body>
     <!-- Lock Screen (Initial Screen) -->
-    <div id="lock-screen" class="lock-screen" data-bs-toggle="collapse" data-bs-target="#portfolio-screen">
+    <div id="lock-screen" class="lock-screen">
         <h2>Satya Sai Suraparaju</h2>
-        <p>Swipe to Unlock ⬆</p>
+        <p><button class="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#portfolio-screen">Swipe to Unlock ⬆</button></p>
     </div>
     
     <!-- Main Portfolio Screen (Initially Hidden) -->
-    <div id="portfolio-screen" class="portfolio-screen collapse">
-        
-        <!-- iPhone Status Bar (Top Section) -->
-        <div class="status-bar">
-            <span>9:41 AM</span> <!-- Simulated Time -->
-            <span>🔋 100%</span> <!-- Battery Icon -->
-            <button class="btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#lock-screen">🔒 Lock</button> <!-- Lock Button -->
-        </div>
-        
-        <!-- App Icons Grid (Main Apps Section) -->
-        <div class="app-grid">
-            <div class="app" data-bs-toggle="modal" data-bs-target="#contactsModal">📞 Contacts</div> <!-- Contacts App -->
-            <div class="app" data-bs-toggle="modal" data-bs-target="#projectsModal">💻 Projects</div> <!-- Projects App -->
-            <div class="app" data-bs-toggle="modal" data-bs-target="#animeModal">🖼️ Anime</div> <!-- Anime Portfolio -->
-            <div class="app" data-bs-toggle="modal" data-bs-target="#techModal">⚙️ Tech Stack</div> <!-- Tech Stack -->
-            <div class="app" data-bs-toggle="modal" data-bs-target="#aboutModal">👤 About Me</div> <!-- About Me Section -->
-        </div>
-        
-        <!-- iPhone Dock (Fixed Bottom Navigation) -->
-        <div class="dock">
-            <div class="dock-app">📩 Mail</div> <!-- Mail App -->
-            <div class="dock-app">📷 Camera</div> <!-- Camera App -->
-            <div class="dock-app">📞 Call</div> <!-- Call App -->
-            <div class="dock-app">💬 Messages</div> <!-- Messages App -->
+    <div id="portfolio-screen" class="offcanvas offcanvas-top">
+        <div class="offcanvas-body">
+            
+            <!-- iPhone Status Bar (Top Section) -->
+            <div class="status-bar d-flex justify-content-between">
+                <span>9:41 AM</span> <!-- Simulated Time -->
+                <span>🔋 100%</span> <!-- Battery Icon -->
+                <button class="btn btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#lock-screen">🔒 Lock</button> <!-- Lock Button -->
+            </div>
+            
+            <!-- App Icons Grid (Main Apps Section) -->
+            <div class="app-grid d-flex flex-wrap justify-content-center mt-4">
+                <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#contactsModal">📞 Contacts</button> <!-- Contacts App -->
+                <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#projectsModal">💻 Projects</button> <!-- Projects App -->
+                <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#animeModal">🖼️ Anime</button> <!-- Anime Portfolio -->
+                <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#techModal">⚙️ Tech Stack</button> <!-- Tech Stack -->
+                <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#aboutModal">👤 About Me</button> <!-- About Me Section -->
+            </div>
+            
+            <!-- iPhone Dock (Fixed Bottom Navigation) -->
+            <div class="dock d-flex justify-content-around mt-5 p-2 bg-light rounded">
+                <button class="dock-app btn btn-light">📩 Mail</button> <!-- Mail App -->
+                <button class="dock-app btn btn-light">📷 Camera</button> <!-- Camera App -->
+                <button class="dock-app btn btn-light">📞 Call</button> <!-- Call App -->
+                <button class="dock-app btn btn-light">💬 Messages</button> <!-- Messages App -->
+            </div>
         </div>
     </div>
     
