@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iPhone Style Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css"> <!-- External CSS for custom styling -->
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS for custom styling -->
 </head>
 <body>
     <!-- Lock Screen (Initial Screen) -->
@@ -15,7 +15,7 @@
     </div>
     
     <!-- Main Portfolio Screen (Initially Hidden) -->
-    <div id="portfolio-screen" class="portfolio-screen d-none">
+    <div id="portfolio-screen" class="portfolio-screen visually-hidden">
         
         <!-- iPhone Status Bar (Top Section) -->
         <div class="status-bar d-flex justify-content-between">
@@ -45,13 +45,13 @@
     <!-- JavaScript for Show/Hide Without Bootstrap Collapse -->
     <script>
         function unlockScreen() {
-            document.getElementById('lock-screen').classList.add('d-none');
-            document.getElementById('portfolio-screen').classList.remove('d-none');
+            document.getElementById('lock-screen').classList.add('visually-hidden');
+            document.getElementById('portfolio-screen').classList.remove('visually-hidden');
         }
         
         function lockScreen() {
-            document.getElementById('portfolio-screen').classList.add('d-none');
-            document.getElementById('lock-screen').classList.remove('d-none');
+            document.getElementById('portfolio-screen').classList.add('visually-hidden');
+            document.getElementById('lock-screen').classList.remove('visually-hidden');
         }
     </script>
     
