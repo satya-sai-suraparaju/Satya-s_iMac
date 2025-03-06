@@ -15,7 +15,7 @@
     </div>
     
     <!-- Main Portfolio Screen (Initially Hidden) -->
-    <div id="portfolio-screen" class="portfolio-screen visually-hidden">
+    <div id="portfolio-screen" class="portfolio-screen d-none">
         
         <!-- iPhone Status Bar (Top Section) -->
         <div class="status-bar d-flex justify-content-between">
@@ -45,13 +45,13 @@
     <!-- JavaScript for Show/Hide Without Bootstrap Collapse -->
     <script>
         function unlockScreen() {
-            document.getElementById('lock-screen').classList.add('visually-hidden');
-            document.getElementById('portfolio-screen').classList.remove('visually-hidden');
+            document.getElementById('lock-screen').classList.add('d-none');
+            document.getElementById('portfolio-screen').classList.remove('d-none');
         }
         
         function lockScreen() {
-            document.getElementById('portfolio-screen').classList.add('visually-hidden');
-            document.getElementById('lock-screen').classList.remove('visually-hidden');
+            document.getElementById('portfolio-screen').classList.add('d-none');
+            document.getElementById('lock-screen').classList.remove('d-none');
         }
     </script>
     
