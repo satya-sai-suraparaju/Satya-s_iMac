@@ -5,44 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iPhone Style Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css"> <!-- External CSS for custom styling -->
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS for custom styling -->
 </head>
 <body>
     <!-- Lock Screen (Initial Screen) -->
     <div id="lock-screen" class="lock-screen">
         <h2>Satya Sai Suraparaju</h2>
-        <p><button class="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#portfolio-screen">Swipe to Unlock ⬆</button></p>
+        <p><button class="btn btn-light" onclick="unlockScreen()">Swipe to Unlock ⬆</button></p>
     </div>
     
     <!-- Main Portfolio Screen (Initially Hidden) -->
-    <div id="portfolio-screen" class="offcanvas offcanvas-top">
-        <div class="offcanvas-body">
-            
-            <!-- iPhone Status Bar (Top Section) -->
-            <div class="status-bar d-flex justify-content-between">
-                <span>9:41 AM</span> <!-- Simulated Time -->
-                <span>🔋 100%</span> <!-- Battery Icon -->
-                <button class="btn btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#lock-screen">🔒 Lock</button> <!-- Lock Button -->
-            </div>
-            
-            <!-- App Icons Grid (Main Apps Section) -->
-            <div class="app-grid d-flex flex-wrap justify-content-center mt-4">
-                <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#contactsModal">📞 Contacts</button> <!-- Contacts App -->
-                <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#projectsModal">💻 Projects</button> <!-- Projects App -->
-                <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#animeModal">🖼️ Anime</button> <!-- Anime Portfolio -->
-                <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#techModal">⚙️ Tech Stack</button> <!-- Tech Stack -->
-                <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#aboutModal">👤 About Me</button> <!-- About Me Section -->
-            </div>
-            
-            <!-- iPhone Dock (Fixed Bottom Navigation) -->
-            <div class="dock d-flex justify-content-around mt-5 p-2 bg-light rounded">
-                <button class="dock-app btn btn-light">📩 Mail</button> <!-- Mail App -->
-                <button class="dock-app btn btn-light">📷 Camera</button> <!-- Camera App -->
-                <button class="dock-app btn btn-light">📞 Call</button> <!-- Call App -->
-                <button class="dock-app btn btn-light">💬 Messages</button> <!-- Messages App -->
-            </div>
+    <div id="portfolio-screen" class="portfolio-screen d-none">
+        
+        <!-- iPhone Status Bar (Top Section) -->
+        <div class="status-bar d-flex justify-content-between">
+            <span>9:41 AM</span> <!-- Simulated Time -->
+            <span>🔋 100%</span> <!-- Battery Icon -->
+            <button class="btn btn-outline-light" onclick="lockScreen()">🔒 Lock</button> <!-- Lock Button -->
+        </div>
+        
+        <!-- App Icons Grid (Main Apps Section) -->
+        <div class="app-grid d-flex flex-wrap justify-content-center mt-4">
+            <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#contactsModal">📞 Contacts</button> <!-- Contacts App -->
+            <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#projectsModal">💻 Projects</button> <!-- Projects App -->
+            <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#animeModal">🖼️ Anime</button> <!-- Anime Portfolio -->
+            <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#techModal">⚙️ Tech Stack</button> <!-- Tech Stack -->
+            <button class="app btn btn-outline-light m-2" data-bs-toggle="modal" data-bs-target="#aboutModal">👤 About Me</button> <!-- About Me Section -->
+        </div>
+        
+        <!-- iPhone Dock (Fixed Bottom Navigation) -->
+        <div class="dock d-flex justify-content-around mt-5 p-2 bg-light rounded">
+            <button class="dock-app btn btn-light">📩 Mail</button> <!-- Mail App -->
+            <button class="dock-app btn btn-light">📷 Camera</button> <!-- Camera App -->
+            <button class="dock-app btn btn-light">📞 Call</button> <!-- Call App -->
+            <button class="dock-app btn btn-light">💬 Messages</button> <!-- Messages App -->
         </div>
     </div>
+    
+    <!-- JavaScript for Show/Hide Without Bootstrap Collapse -->
+    <script>
+        function unlockScreen() {
+            document.getElementById('lock-screen').classList.add('d-none');
+            document.getElementById('portfolio-screen').classList.remove('d-none');
+        }
+        
+        function lockScreen() {
+            document.getElementById('portfolio-screen').classList.add('d-none');
+            document.getElementById('lock-screen').classList.remove('d-none');
+        }
+    </script>
     
     <!-- Bootstrap JavaScript (Required for Modals & Animations) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
