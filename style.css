@@ -11,49 +11,59 @@ body {
     overflow: hidden;
 }
 
-/* Lock Screen */
-.lock-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 1.5rem;
-    z-index: 9999;
+/* Smooth transition effect */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
 }
-.lock-screen p {
-    animation: swipeHint 1.5s infinite;
-    cursor: pointer;
-}
-@keyframes swipeHint {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Portfolio Screen */
-.portfolio-screen {
-    text-align: center;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+/* Glassmorphism Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
     padding: 20px;
-    display: none;
 }
 
-/* Show portfolio screen after unlock */
-.portfolio-screen.show {
-    display: flex;
+/* Quick Profile Card on Hover */
+.quick-profile {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+    text-align: center;
+    width: 200px;
+}
+.about-btn:hover + .quick-profile {
+    display: block;
+}
+
+/* Tech Stack Flip Effect */
+.tech-card {
+    perspective: 1000px;
+}
+.tech-inner {
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+.tech-card:hover .tech-inner {
+    transform: rotateY(180deg);
+}
+.tech-front, .tech-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.tech-back {
+    transform: rotateY(180deg);
 }
 
 /* Status Bar */
