@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #D4AF37, #8B4513); /* Gold and Brown Gradient */
     height: 100vh;
     display: flex;
@@ -43,64 +43,92 @@ body {
     padding: 10px 20px;
 }
 
-/* App Grid - Centered Properly */
+/* App Grid - Fully Centered */
 .app-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 30px;
-    margin-top: 150px;
-    width: 80%;
+    margin-top: 80px;
+    width: 100%;
     text-align: center;
 }
 .app {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-    padding: 20px;
+    padding: 25px;
     border-radius: 20px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: white;
     transition: transform 0.2s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
 }
 .app:hover {
     transform: scale(1.1);
     cursor: pointer;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Quick Profile Card - Improved Styling */
+.quick-profile {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #8B4513;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* About Me Button - Properly Centered */
 .about-btn {
     margin-top: 30px;
-    padding: 10px 20px;
-    align-self: center;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
 }
 
 /* Dock - Stick to Bottom and Centered */
 .dock {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    width: 80%;
+    gap: 20px;
+    width: 85%;
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
-    padding: 15px;
-    border-radius: 20px;
+    padding: 20px;
+    border-radius: 25px;
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 .dock-app {
-    padding: 10px 20px;
-    font-size: 1.2rem;
+    padding: 12px 25px;
+    font-size: 1.3rem;
+    font-weight: bold;
     color: white;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     text-align: center;
-    min-width: 100px;
+    min-width: 120px;
+    transition: all 0.2s ease-in-out;
+}
+.dock-app:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
 }
