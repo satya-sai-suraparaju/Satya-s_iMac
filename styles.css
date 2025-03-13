@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #89CFF0, #6A5ACD);
+    background: linear-gradient(135deg, #D4AF37, #8B4513); /* Gold and Brown Gradient */
     height: 100vh;
     display: flex;
     align-items: center;
@@ -43,14 +43,14 @@ body {
     padding: 10px 20px;
 }
 
-/* App Grid - Centered */
+/* App Grid - Centered Properly */
 .app-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 100px;
-    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 30px;
+    margin-top: 150px;
+    width: 80%;
     text-align: center;
 }
 .app {
@@ -65,8 +65,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
 }
 .app:hover {
     transform: scale(1.1);
@@ -77,6 +77,7 @@ body {
 .about-btn {
     margin-top: 30px;
     padding: 10px 20px;
+    align-self: center;
 }
 
 /* Dock - Stick to Bottom and Centered */
